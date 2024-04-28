@@ -82,7 +82,7 @@ def method(FILE_NAME = None, FORMAT = None):
         # Save binarized image
         file_ = file_paths[i+1].split('/')[-1].split('.')[0] + '_binarized' + FORMAT
         image_file_path = '/'.join(file_paths[i+1].split('/')[:-1]) + '/' + file_
-        cv2.imwrite(image_file_path, binarize_image)
+        cv2.imwrite(image_file_path, binarize_image * 255)
 
         i += 1
         axs[i//3][i%3].imshow(binarize_image, cmap='gray', vmin=0, vmax=1)
